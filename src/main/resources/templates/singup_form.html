@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - CodeJava</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container text">
+    <h1>SignUp_form</h1>
+
+    <div>
+
+        <form th:action="@{/process_register}" method="post" th:object="${user}" style="width: 70%">
+
+            <div class="">
+                <div class="form-group row">
+                    <label class="col-form-label col-4">E-email:</label>
+                    <div class="col-8">
+                        <input  class="form-control" type="email" th:field="*{email}" required>
+                    </div>
+                    <label class="col-form-label col-4">Password:</label>
+                    <div class="col-8">
+                        <input  class="form-control" type="password" th:field="*{password}"
+                        minlength="6" maxlength="20">
+                    </div>
+                    <label class="col-form-label col-4">FirstName:</label>
+                    <div class="col-8">
+                        <input  class="form-control" type="text" th:field="*{firstName}"
+                        minlength="2" maxlength="20">
+                    </div>
+                    <label class="col-form-label col-4">LastName:</label>
+                    <div class="col-8">
+                        <input  class="form-control" type="text"    th:field="*{lastName}"
+                        minlength="2" maxlength="20">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
